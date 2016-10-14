@@ -185,13 +185,13 @@ def menu(exits):
         # Display menu
         print_menu(exits)
         # Read player's input
-        user_input = str(input())
+        user_input = input()
         # Normalise the input
-        normalise_input(user_input)
+        user_input = normalise_input(user_input)
         # Check if the input makes sense (is valid exit)
-        is_valid_exit(exits, user_input)
             # If so, return the player's choice
-        move(exits, direction)
+        if is_valid_exit(exits, user_input):
+            return user_input
 
 
 
